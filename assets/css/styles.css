@@ -39,6 +39,11 @@ header {
   height: 3.25rem;
 }
 
+.header__toggle {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #toggleTheme {
   font-size: 1.5rem;
 }
@@ -78,7 +83,9 @@ header {
 }
 
 .menu__link.active .menu__icon,
-.menu__link.active .menu__text {
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon,
+.menu__link:hover .menu__text {
   color: var(--primary-icon-active-color);
   font-weight: 600;
 }
@@ -92,8 +99,30 @@ header {
   text-transform: uppercase;
 }
 
+.menu--principal {
+  gap: 1rem;
+}
+
+.header__nav {
+  display: none;
+}
+
 @media (min-width: 768px) {
-  .menu--mobile{
+  header {
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    background-color: var(--primary-bg-color);
+  }
+  
+  .nav--mobile{
     display: none;
+  }
+
+  .header__nav{
+    display: flex;
+  }
+
+  .header__toggle, .header__brand{
+    min-width: 30%;
   }
 }
