@@ -1,7 +1,7 @@
 @import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-:root {
+:root, :root[data-theme='dark'] {
   --primary-color: #C7A563;
   --primary-icon-color: #C7A563;
   --primary-icon-active-color: #ddb86e;
@@ -12,9 +12,24 @@
   --text-color: #B0C4BF;
 }
 
+:root[data-theme='light'] {
+  --primary-color: #1F403D;
+  --primary-icon-color: #1F403D;
+  --primary-icon-active-color: #2e5d59;
+  --primary-bg-color: #F5F7F7;
+  --secondary-bg-color: #E0EAE9;
+  --border-color: #E0EAE9;
+  --title-color: #1F403D;
+  --text-color: #4A6E6D;
+}
+
+html[data-theme='light'] .brand__logo {
+  filter: invert(1);
+}
+
 body {
   background-color: var(--primary-bg-color);
-  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -46,6 +61,8 @@ header {
 
 #toggleTheme {
   font-size: 1.5rem;
+  cursor: pointer;
+  transition: ease-in-out .4s;
 }
 
 .menu {
