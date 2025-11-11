@@ -1,0 +1,99 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --primary-color: #C7A563;
+  --primary-icon-color: #C7A563;
+  --primary-icon-active-color: #ddb86e;
+  --primary-bg-color: #1F403D;
+  --secondary-bg-color: #2C524F;
+  --border-color: #2C524F;
+  --title-color: #C7A563;
+  --text-color: #B0C4BF;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  color: var(--title-color)
+}
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.header__brand .brand__logo {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+#toggleTheme {
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  background: var(--primary-bg-color);
+}
+
+.menu__item{
+  width: 100%;
+}
+
+.menu--mobile {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid var(--border-color);
+  justify-content: space-between;
+}
+
+.menu--mobile .menu__item {
+  padding: .5rem 0;
+}
+
+.menu--mobile .menu__link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.menu__icon, .menu__text {
+  color: var(--primary-icon-color);
+}
+
+.menu__link.active .menu__icon,
+.menu__link.active .menu__text {
+  color: var(--primary-icon-active-color);
+  font-weight: 600;
+}
+
+.menu_icon {
+  font-size: 1.5rem;
+}
+
+.menu__text {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .menu--mobile{
+    display: none;
+  }
+}
